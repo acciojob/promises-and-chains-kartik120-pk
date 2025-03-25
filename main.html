@@ -49,14 +49,14 @@
 
     <script>
         document.getElementById("voteForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form from reloading
+            event.preventDefault(); // Prevent form reload
             
             let name = document.getElementById("name").value.trim();
             let age = document.getElementById("age").value.trim();
 
             // Validation: Check if both fields are filled
             if (!name || !age) {
-                alert("Please enter valid details.");
+                alert("Please enter valid details."); // Ensure exact match with Cypress test case
                 return;
             }
 
@@ -70,7 +70,7 @@
                     } else {
                         reject(`Oh sorry ${name}. You aren't old enough.`);
                     }
-                }, 4000); // Delay for 4 seconds
+                }, 4000); // 4-second delay
             });
 
             // Handling the Promise result
